@@ -1,0 +1,174 @@
+%%% Packages
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xspace}
+\usepackage{xcolor}
+\usepackage[
+	pdftitle=Project,
+	colorlinks=false,
+	final,
+	linkcolor=blue,
+	citecolor=magenta,
+	urlcolor=blue,
+]{hyperref}
+\usepackage[obeyDraft, textsize=footnotesize, colorinlistoftodos]{todonotes}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[toc]{appendix}
+\usepackage{array}
+\usepackage{cancel}
+\usepackage{framed}
+
+\setlist[enumerate,1]{label=(\arabic*)} % to make basic enumerate with 1) instead of 1.
+
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+
+\hbadness=10000
+
+\usepackage{multicol}
+\usepackage[
+	paper=a4paper, % Change to letterpaper for US letter
+	bottom=3cm, % Bottom margin
+]{geometry} %% geomatry dash??
+
+\usepackage{soul} %% like Aretha Franklin??
+\usepackage{multicol}
+\usepackage[skip=5pt plus1pt, indent=0pt]{parskip}
+\usepackage{realhats}
+
+\usepackage{multirow}
+\usepackage{tikz-cd} % sonic cd???
+\usetikzlibrary{graphs, 3d} % i put this here btw
+
+%\usepackage[square,numbers]{natbib}%, sorting=nyt]
+\usepackage[style=numeric, backend=biber, sorting=nyt]{biblatex}
+\addbibresource{refs.bib}
+
+\usepackage{float,caption}
+
+%%%%% fancy hdr and sections
+\usepackage{titlesec}
+\titleformat{\chapter}
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter.}{1em}{}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14pt}
+
+\makeatletter
+\renewcommand{\sectionmark}[1]{\markright{\thesection~~~#1}}
+\renewcommand{\chaptermark}[1]{\markboth{\if@mainmatter \fi#1}{}}
+\makeatother
+
+\makeatletter
+\newcommand{\chapterauthor}[1]{%
+	{\parindent0pt\vspace*{-25pt}%
+			\linespread{1.1}\Large\centering#1%
+			\par\nobreak\vspace*{35pt}}
+	\@afterheading%
+}
+\makeatother
+
+
+% part title in each part
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[R]{Invariant Theory}
+\cfoot{\thepage}
+
+\newcommand{\Sn}[1][n]{\mathcal{S}_{#1}\xspace}
+\newcommand{\An}[1][n]{\mathcal{A}_{#1}\xspace}
+\newcommand{\set}[1]{\ensuremath{\left\lbrace #1 \right\rbrace}\xspace}
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+#1 % the function
+\littletaller % pretend it's a little taller at normal size
+\right|_{#2} % this is the delimiter
+}}
+\newcommand{\littletaller}{\mathchoice{\vphantom{\big|}}{}{}{}}
+
+
+%%% ===== Styling for theorems
+\theoremstyle{plain} % the style for theorem, propositions and lemmas
+% Counter used to make it continuous numbering with subsubsection value appended
+\newtheorem{thm}{Theorem}[section] % name shortcut for Theorem & counter check
+\newtheorem{theorem}[thm]{Theorem}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{proposition}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{corollary}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{claim}{Claim}
+\newcounter{scount}[subsection] % counter to only go down to subsection but make it different
+\renewcommand{\thescount}{\arabic{subsection}.\arabic{scount}}
+\newtheorem{scholie}[scount]{Scholie}
+\theoremstyle{definition} % the style for definitions
+\newtheorem{defn}[thm]{Definition} % shortname
+\newtheorem{definition}[thm]{Definition} % shortname
+\newtheorem*{defns}{Definitions} % plural shortname
+\newtheorem{ex}[thm]{Example}
+\newtheorem{example}[thm]{Example}
+\theoremstyle{remark} % the style for remarks and examples
+\newtheorem{rem}[thm]{/emark} % shortname
+\newtheorem{remark}[thm]{Remark} % longname
+\newtheorem*{rem*}{Remark} % starred version
+\newtheorem*{note}{Note}
+\newtheorem*{rems}{Remarks} % plural
+\newtheorem{notation}[thm]{Notation}
+\newtheorem*{notation*}{Notation}
+\newtheorem{question}[thm]{Question}
+\counterwithin{equation}{section}
+\counterwithin{figure}{section}
+
+%%% Shorthands
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\F}{\ensuremath{\mathbb{F}}}
+\newcommand{\Card}[1]{\lvert #1 \rvert}
+\newcommand{\priv}{\setminus}
+\newcommand{\ob}[1]{\overline{#1}}
+\newcommand{\ssi}{\Leftrightarrow}
+\newcommand{\g}{\mathbf{g}}
+
+%% Math Operators
+
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\Dim}{Dim}
+\DeclareMathOperator{\Rank}{Rank}
+\DeclareMathOperator{\Ham}{Ham}
+\DeclareMathOperator{\Fix}{Fix}
+\DeclareMathOperator{\Jac}{Jac}
+
+
+%%% Todo notes
+% Colouring
+\def\mathcolor#1#{\@mathcolor{#1}}
+\def\@mathcolor#1#2#3{%
+	\protect\leavevmode
+	\begingroup\color#1{#2}#3\endgroup
+}
+\newcommand{\blue}[1]{\mathcolor{blue}{#1}}
+\newcommand{\rose}[1]{\mathcolor{magenta}{#1}}
+
+% Todo items
+\definecolor{cadetblue}{rgb}{0.37, 0.62, 0.63} % ocean blue
+\definecolor{celadon}{rgb}{0.67, 0.88, 0.69} % light green
+\definecolor{arylide}{rgb}{0.91, 0.84, 0.42} % mustardy yellow
+\newcommand{\checkref}[2][]{\todo[color=cadetblue, #1]{#2}}
+\newcommand{\suggestion}[2][]{\todo[color=celadon, inline, #1]{#2}}
+\newcommand{\idea}[2][]{\todo[color=magenta!70!black, #1]{#2}}
+\newcommand{\error}[2][]{\todo[color=red!70, #1]{#2}}
+
+
+%% If you want to add packages add them under THIS LINE
+%% They will get edited later

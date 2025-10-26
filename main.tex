@@ -1,0 +1,78 @@
+\documentclass[11pt]{report}
+\input{preamble}
+
+%\setcounter{section}{0}}
+
+\title{\Huge\textbf{Formal Languages and Automata Theory}}
+\author{\large Akash Gopinath}
+\date{\today}
+
+
+\begin{document}
+
+{
+\let\newpage\relax
+\maketitle
+\begin{center}
+	\vfill
+	\Large
+	MMath Independent Project \\
+	Supervised by Prof. Victoria Gould
+
+	\vspace{0.4cm}
+	\includegraphics[width=0.5\textwidth]{university.png}
+
+	\textbf{
+		Department of Mathematics \\
+		University of York \\
+		2025 - 2026	}
+\end{center}
+}
+\titlepage
+
+\pagestyle{fancy}
+
+%\begin{abstract}
+%\end{abstract}
+
+\tableofcontents
+\newpage
+
+%\chapter{Introduction}
+
+%\input{Sections/introduction}
+%\newpage
+
+\chapter{What is my project}
+\input{chapter_1/chapter_1}
+\newpage
+
+%\chapter{What I hope to do in my project}
+%\input{chapter_2/chapter_2}
+%\newpage
+
+\chapter{How I will achieve this}
+\input{chapter_2/chapter_2}
+\newpage
+
+\chapter{Timeline of the project}
+\input{chapter_4/chapter_4}
+\newpage
+
+%\chapter{Conclusion}
+\input{Sections/footer}
+
+
+\newpage
+\setcounter{chapter}{9}
+%\renewcommand{\chaptertitle}{Bibliography}
+% \bibliographystyle{plainnat}
+% \bibliographystyle{unsrtnat}
+% \bibliography{refs}
+\printbibliography
+
+\appendix
+\input{Sections/appendix.tex}
+
+\end{document}
+
