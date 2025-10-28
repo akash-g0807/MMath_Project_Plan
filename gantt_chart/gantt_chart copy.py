@@ -6,8 +6,21 @@ import pandas as pd
 df = pd.DataFrame([
     dict(Task="Initial Supervisor Meeting", Start='2025-10-02', Finish='2025-10-02', Effort=40),
     dict(Task="Research: Reading Vicky Notes", Start='2025-09-23', Finish='2025-10-24', Effort=80),
-    dict(Task="Planning Lecture", Start='2025-10-17', Finish='2025-10-17', Effort=20)
+    dict(Task="Planning Lecture", Start='2025-10-17', Finish='2025-10-17', Effort=20),
+    dict(Task="Research: Read Varities book", Start='2025-10-25', Finish='2025-12-15', Effort=100),
+    dict(Task="Look into algorithms", Start='2025-11-15', Finish='2026-01-01', Effort=50),
+    dict(Task="Chapter 1 Draft", Start='2026-01-30', Finish='2026-02-15', Effort=60),
+    dict(Task="Project Plan", Start='2025-10-25', Finish='2025-11-7', Effort=70),
+    dict(Task="Literature Review", Start='2025-11-7', Finish='2026-01-01', Effort=60),
+    dict(Task="Literature Review", Start='2026-01-01', Finish='2026-01-30', Effort=30),
+    dict(Task="Supervision Meeting 2", Start='2025-10-28', Finish='2025-10-28', Effort=40),
+    dict(Task="Draft Start", Start='2026-02-05', Finish='2026-03-13', Effort=100),
+    dict(Task="Feedback Meeting", Start='2025-11-11', Finish='2025-11-11', Effort=40),
+    dict(Task="Draft Feedback Meeting", Start='2026-03-23', Finish='2026-03-23', Effort=70),
+    dict(Task="Final Writeup", Start='2026-03-13', Finish='2026-04-27', Effort=40),
+
 ])
+
 
 df["Start"] = pd.to_datetime(df["Start"])
 df["Finish"] = pd.to_datetime(df["Finish"])
@@ -58,9 +71,13 @@ fig.update_coloraxes(
 # === Milestone adder (by date) ===
 # Provide any list of dicts with Date + Label (+ optional Color).
 milestones = [
-    {"Date": "2025-10-05", "Label": "Kickoff",   "Color": "black"},
-    {"Date": "2025-10-15", "Label": "Midpoint",  "Color": "purple"},
-    {"Date": "2025-10-24", "Label": "Deadline",  "Color": "crimson"},
+    {"Date": "2025-09-23", "Label": "Kickoff",   "Color": "black"},
+    {"Date": "2026-01-30", "Label": "Chapter 1 start",  "Color": "purple"},
+    {"Date": "2025-11-07", "Label": "Project Plan Due",  "Color": "darkorange"},
+    {"Date": "2025-11-11", "Label": "Feedback Meeting",  "Color": "blue"},
+    {"Date": "2026-04-27", "Label": "Final Submission",  "Color": "red"},
+    {"Date": "2026-03-13", "Label": "Draft Submission",  "Color": "red"},
+    {"Date": "2026-03-23", "Label": "Draft Feedback",  "Color": "blue"},
 ]
 
 milestones = [{**m, "Date": pd.to_datetime(m["Date"])} for m in milestones]
