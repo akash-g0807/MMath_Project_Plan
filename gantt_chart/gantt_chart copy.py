@@ -17,7 +17,7 @@ df = pd.DataFrame([
     dict(Task="Draft Start", Start='2026-02-05', Finish='2026-03-13', Effort=100),
     dict(Task="Feedback Meeting", Start='2025-11-11', Finish='2025-11-11', Effort=40),
     dict(Task="Draft Feedback Meeting", Start='2026-03-23', Finish='2026-03-23', Effort=70),
-    dict(Task="Final Writeup", Start='2026-03-13', Finish='2026-04-27', Effort=40),
+    dict(Task="Final Writeup", Start='2026-03-13', Finish='2026-04-27', Effort=90),
 
 ])
 
