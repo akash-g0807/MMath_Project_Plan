@@ -21,7 +21,6 @@ df = pd.DataFrame([
 
 ])
 
-
 df["Start"] = pd.to_datetime(df["Start"])
 df["Finish"] = pd.to_datetime(df["Finish"])
 

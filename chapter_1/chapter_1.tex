@@ -1,14 +1,65 @@
 My topic is on the study of formal languages and automata theory. This topic is an intersection of mathematics and theoretical computer science. It explores the relationship between
 algebraic structures and computational models, providing a rigorous framework for understanding the capabilities and limitations of different types of automata and the languages they recognize.
+\vspace{5pt}
+\begin{definition*}
+    An {\bf alphabet} is a non-empty finite set of symbols. A word over an alphabet $A$ is a finite sequence of symbols from $A$. The set of all words over $A$ is denoted by $A^+$. 
+    $$A^{*} = \{a_1, a_2, \ldots a_n | n \in \mathbb{N}, a_i \in A, 1 \leq i \leq n\}$$
+    A {\bf language} over an alphabet $A$ is a subset of $A^*$.
+\end{definition*}
+
+{\bf Remark:} An empty word is denoted by $\epsilon$ and is the unique word of length 0. The set $A^*$ includes the empty word, while $A^+$ does not.
+$$A^{*} = A^{+} \cup \{\epsilon\}$$
 
 A DFA, or Deterministic Finite Automata, is a theoretical model of computation that consists of a finite set of states, an input alphabet, a transition function, a start state, and a set of accept states. A DFA can also be viewed as a generator of algebraic information.
+
+\begin{definition*}
+    A DFA is a 5-tuple 
+    $$\mathscr{A} = (A, Q, \delta, q_0, F)$$ where:
+    \begin{itemize}
+        \item $A$ is a finite set called the alphabet.
+        \item $Q$ is a finite set called the states.
+        \item $\delta: Q \times A \rightarrow Q$ is the transition function.
+        \item $q_0 \in Q$ is the start state.
+        \item $F \subseteq Q$ is the set of accept states.
+    \end{itemize}
+\end{definition*}
+
+Hence a language is said to be {\bf regular} if it can be recognized by a DFA.
+
 A regular language $L$ has associated with it a monoid $M(L)$ called the syntactic monoid of L\cite{Gould2021}.
 Monoids help us determine the class of regular recognizable languages.
 
 My first objective is to understand the algebraic structure of $M(L)$ and then use this to study varieties and pseudovarieties of monoids.
-A variety of algebras is a class of algebras closed under the formation of homomorphic images, subalgebras, and arbitrary direct products. When restricted to finite algebras, these are called pseudovarieties.
+
+\begin{definition*} \cite{PinBook}
+    A {\bf variety} of monoids closed under division and finite direct products.
+    Equivalently, a class $V$ of monoids is a variety if it $V$ satisfies the following 3 conditions:
+    \begin{itemize}
+        \item If $S \in V$ and $T$ is a submonoid of S then $T \in V$.
+        \item If $S \in V$ and if $T$ is a quotient of $S$ then $T \in V$.
+        \item if $(S_{i})_{i \in I}$ a family of monoids in $V$ then the finite direct product $\prod_{i \in I} S_i \in V$.
+    \end{itemize}
+\end{definition*}
+
+A {\bf pseudovariety} is a class of finite monoids closed under division and finite direct products.
 
 The next objective is to explore Eilenberg's correspondence, which establishes a bijective relationship between varieties of regular languages and pseudovarieties of finite monoids. \cite{PinBook}
+If $V$ is a variety of monoids and $A$ is an alphabet, we denote by $A^*\mathcal{V}$ the set of all recognisable languages $L \subseteq A^*$ such that the syntactic monoid $M(L)$ belongs to $V$.
+\begin{definition*}
+    A variety of languages is a class of recognizable languages closed under the following operations:
+    \begin{itemize}
+        \item For every alphabet $A$, $A^*\mathcal{V}$ is a boolean algebra (operations union and complementation)
+        \item if $\psi: A^* \rightarrow B^*$ is a free monoid morphism and $L \in B^*\mathcal{V}$ implies $L\psi^{-1} \in A^*\mathcal{V}$.
+        \item If $L \in A^*\mathcal{V}$ and $a \in A$ then $a^{-1}L$ and $La^{-1}$ belong to $A^*\mathcal{V}$.
+    \end{itemize}
+\end{definition*}
+
+And Eilenberg's correspondence states the following:
+
+\begin{theorem*}
+ There is a one-to-one correspondence between varieties of regular languages and pseudovarieties of finite monoids.
+\end{theorem*}
+
 This correspondence allows us to translate problems in language theory into problems in algebra and vice versa, providing powerful tools for analysis. Under this correspondence, a regula language $L$
 belongs to a variety of languages $\mathcal{V}$ if and only if its syntactic monoid $M(L)$ belongs to the corresponding pseudovariety of monoids $\mathcal{W}$.
 
