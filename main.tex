@@ -1,4 +1,4 @@
-\documentclass[11pt]{report}
+\documentclass[10pt]{report}
 \input{preamble}
 
 %\setcounter{section}{0}}
@@ -7,6 +7,12 @@
 \author{\large Akash Gopinath}
 \date{\today}
 
+\makeatletter
+\renewcommand\chapter{\thispagestyle{plain}%
+\global\@topnum\z@
+\@afterindentfalse
+\secdef\@chapter\@schapter}
+\makeatother
 
 \begin{document}
 
@@ -35,32 +41,32 @@
 %\begin{abstract}
 %\end{abstract}
 
-\tableofcontents
-\newpage
+%\tableofcontents
+%\newpage
 
 %\chapter{Introduction}
 
 %\input{Sections/introduction}
 %\newpage
 
-\chapter{What is my project}
+%\chapter{What is my project}
 \input{chapter_1/chapter_1}
-\newpage
+%\newpage
 
 
 
-\chapter{How I will achieve this}
+%\chapter{How I will achieve this}
 \input{chapter_2/chapter_2}
-\newpage
+%\newpage
 
-\chapter{Motivations and issues I hope to address}
+%\chapter{Motivations and issues I hope to address}
 %\chapter{What I hope to do in my project}
 \input{chapter_4/chapter_4}
-\newpage
+%\newpage
 
-\chapter{Timeline of the project}
+%\chapter{Timeline of the project}
 \input{chapter_3/chapter_3}
-\newpage
+%\newpage
 
 
 
@@ -68,8 +74,8 @@
 \input{Sections/footer}
 
 
-\newpage
-\setcounter{chapter}{9}
+%\newpage
+%\setcounter{chapter}{9}
 %\renewcommand{\chaptertitle}{Bibliography}
 % \bibliographystyle{plainnat}
 % \bibliographystyle{unsrtnat}
